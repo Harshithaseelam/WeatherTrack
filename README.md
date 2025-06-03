@@ -4,6 +4,17 @@ WeatherTrack is a simple Android app designed for users who want to track daily 
 
 ---
 
+## Screenshots
+
+### Main Screen  
+![Main Screen](screenshots/main_screen.png)
+
+### Weekly Summary  
+![Weekly Summary](screenshots/weekly_summary.png)
+
+### Detailed Day View  
+![Detailed Day View](screenshots/detailed_day_view.png)
+
 ## Features
 
 ### 1. Fetch Weather Data
