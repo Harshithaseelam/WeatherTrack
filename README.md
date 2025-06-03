@@ -10,7 +10,7 @@ WeatherTrack is a simple Android app designed for users who want to track daily 
 <img src="screenshots/home_screen.png" alt="Main Screen" width="300"/>
 
 ### Weekly Summary  
-<img src="screenshots/weekly_summary.png" alt="Weekly Summary" width="300"/>
+<img src="screenshots/weekly_graph.png" alt="Weekly Summary" width="300"/>
 
 ### Detailed Day View  
 <img src="screenshots/past_7days_screen.png" alt="Detailed Day View" width="300"/>
