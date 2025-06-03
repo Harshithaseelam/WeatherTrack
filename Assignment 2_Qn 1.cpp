@@ -1,49 +1,63 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-class Solution {
-  public:
-    void solve(int col, vector < string > & board, vector < vector < string >> & ans, vector < int > & leftrow, vector < int > & upperDiagonal, vector < int > & lowerDiagonal, int n) {
-      if (col == n) {
-        ans.push_back(board);
+
+                            // variable names and their meaning
+                            // r : row
+                            // c : column
+                            // lr : left row
+                            // ld : lower diagonal
+                            // ud : upper diagonal
+
+
+    void solve(int c, vector<string>&Board, vector<vector<string>>&result, vector<int>&lr, vector<int>&ud, vector<int>&ld, int n) {
+      if (c == n) {
+        result.push_back(Board);
         return;
       }
-      for (int row = 0; row < n; row++) {
-        if (leftrow[row] == 0 && lowerDiagonal[row + col] == 0 && upperDiagonal[n - 1 + col - row] == 0) {
-          board[row][col] = 'Q';
-          leftrow[row] = 1;
-          lowerDiagonal[row + col] = 1;
-          upperDiagonal[n - 1 + col - row] = 1;
-          solve(col + 1, board, ans, leftrow, upperDiagonal, lowerDiagonal, n);
-          board[row][col] = '.';
-          leftrow[row] = 0;
-          lowerDiagonal[row + col] = 0;
-          upperDiagonal[n - 1 + col - row] = 0;
+      for (int r = 0; r < n; r++) {
+        if (lr[r] == 0 && ld[r + c] == 0 && ud[n - 1 + c - r] == 0) {
+          Board[r][c] = 'Q';
+          lr[r] = 1;
+          ld[r + c] = 1;
+          ud[n - 1 + c - r] = 1;
+          solve(c + 1, Board, result, lr, ud, ld, n);
+          Board[r][c] = '.';
+          lr[r] = 0;
+          ld[r + c] = 0;
+          ud[n - 1 + c - r] = 0;
         }
       }
     }
 
-  public:
-    vector < vector < string >> solveNQueens(int n) {
-      vector < vector < string >> ans;
-      vector < string > board(n);
+
+    vector<vector<string>>solve_N_Queens(int n) {
+      
+      vector<string>Board(n);
+      
       string s(n, '.');
       for (int i = 0; i < n; i++) {
-        board[i] = s;
+        Board[i] = s;
       }
-      vector < int > leftrow(n, 0), upperDiagonal(2 * n - 1, 0), lowerDiagonal(2 * n - 1, 0);
-      solve(0, board, ans, leftrow, upperDiagonal, lowerDiagonal, n);
-      return ans;
+      
+      vector<vector<string>>result;
+      
+
+     
+      vector<int>lr(n, 0),ud(2 * n - 1, 0),ld(2 * n - 1, 0);
+      
+      solve(0, Board,result, lr, ud, ld, n);
+      return result;
+      
     }
-};
+    
 int main() {
-  int n = 4; 
-  Solution obj;
-  vector < vector < string >> ans = obj.solveNQueens(n);
-  for (int i = 0; i < ans.size(); i++) {
-    cout << "Arrangement " << i + 1 << "\n";
-    for (int j = 0; j < ans[0].size(); j++) {
-      cout << ans[i][j];
+  int n;
+  cin>>n;
+  vector<vector<string>>res = solve_N_Queens(n);
+  for (int i = 0; i < res.size(); i++) {
+   
+    for (int j = 0; j < res[0].size(); j++) {
+      cout << res[i][j];
       cout << endl;
     }
     cout << endl;
