@@ -1,0 +1,37 @@
+[
+  {
+    "temperature": 30.5,
+    "humidity": 65,
+    "condition": "Sunny"
+  },
+  {
+    "temperature": 28.2,
+    "humidity": 70,
+    "condition": "Cloudy"
+  },
+  {
+    "temperature": 25.1,
+    "humidity": 80,
+    "condition": "Rainy"
+  },
+  {
+    "temperature": 27.8,
+    "humidity": 60,
+    "condition": "Windy"
+  },
+  {
+    "temperature": 29.4,
+    "humidity": 55,
+    "condition": "Sunny"
+  },
+  {
+    "temperature": 31.0,
+    "humidity": 50,
+    "condition": "Hot"
+  },
+  {
+    "temperature": 26.3,
+    "humidity": 75,
+    "condition": "Rainy"
+  }
+]
